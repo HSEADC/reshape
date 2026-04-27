@@ -38,13 +38,20 @@ body.models {
       background-color: #3C87B1;
     }
     .journalCard {
+      height: 100%;
       .flex {
         padding-top: 20px;
         padding-bottom: 20px;
         border: 1px solid #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
       }
       width: 100%;
       // max-width: 310px;
+      .image {
+        flex: 1;
+      }
       .arrow {
         width: 74px;
       }
@@ -214,17 +221,37 @@ body.models {
           width: auto;
         }
         .container {
-          padding-left: 20px;
-          padding-right: 20px;
-          grid-template-columns: 1fr;
+          padding-left: 15px;
+          padding-right: 15px;
+          grid-template-columns: 1fr 1fr;
+          column-gap: 10px;
+          row-gap: 20px;
           .journalCard {
+            .flex {
+              padding-top: 12px;
+              padding-bottom: 12px;
+            }
             .header {
+              font-size: 16px;
               height: auto;
-              padding-bottom: 10px;
+              padding-left: 10px;
+              padding-right: 10px;
+              padding-bottom: 8px;
             }
             .text {
+              font-size: 12px;
               height: auto;
-              padding-bottom: 10px;
+              padding-left: 10px;
+              padding-right: 10px;
+              padding-bottom: 8px;
+            }
+            .bottom {
+              padding-left: 10px;
+              padding-right: 10px;
+              margin-top: 10px;
+            }
+            .arrow {
+              width: 40px;
             }
           }
         }
