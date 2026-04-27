@@ -19,6 +19,7 @@
 @import 'stylesheets/style_guide.scss';
 @import 'stylesheets/art.scss';
 @import 'stylesheets/music.scss';
+@import 'stylesheets/tutorial-page.scss';
 
 @import 'stylesheets/pixelcompare.css';
 @import 'stylesheets/pixelcompare.min.css';

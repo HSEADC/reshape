@@ -2,3 +2,5 @@
 yarn-error.log
 /node_modules
 /dev_build
+.omc
+.claude

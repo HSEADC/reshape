@@ -165,6 +165,39 @@ module.exports = {
       filename: './models/mercury.html'
     }),
 
+    new HtmlWebpackPlugin({
+      template: './src/tutorials/interface.html',
+      filename: './tutorials/interface.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/tutorials/hotkeys.html',
+      filename: './tutorials/hotkeys.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/tutorials/blender.html',
+      filename: './tutorials/blender.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/tutorials/simulation.html',
+      filename: './tutorials/simulation.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/tutorials/rigging.html',
+      filename: './tutorials/rigging.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/tutorials/rabbit.html',
+      filename: './tutorials/rabbit.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/tutorials/polygons.html',
+      filename: './tutorials/polygons.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/tutorials/animation.html',
+      filename: './tutorials/animation.html'
+    }),
+
     // Partials
     new HtmlWebpackPartialsPlugin([
       {
