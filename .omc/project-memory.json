@@ -1,0 +1,349 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1776369590681,
+  "projectRoot": "/Users/miraszhandosov/@_Dev/reshape",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "react",
+        "version": "18.2.0",
+        "category": "frontend"
+      },
+      {
+        "name": "react-dom",
+        "version": "18.2.0",
+        "category": "frontend"
+      },
+      {
+        "name": "webpack",
+        "version": "5.33.2",
+        "category": "build"
+      }
+    ],
+    "packageManager": "yarn",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "yarn build",
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": "yarn start",
+    "scripts": {
+      "start": "webpack serve --open --config webpack.dev.js",
+      "watch": "webpack --config webpack.dev.js",
+      "build": "webpack --config webpack.prod.js"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "docs",
+      "src"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "docs": {
+      "path": "docs",
+      "purpose": "Documentation",
+      "fileCount": 21,
+      "lastAccessed": 1776369590672,
+      "keyFiles": [
+        "about.html",
+        "e1f1c35ada086a89d746.ico",
+        "ea664c83f4856789921a.js",
+        "eeed72ccfd0168a87faf.js",
+        "general.html"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 19,
+      "lastAccessed": 1776369590672,
+      "keyFiles": [
+        "about.html",
+        "general.html",
+        "history.html",
+        "index.css",
+        "index.html"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "src/start.html",
+      "accessCount": 11,
+      "lastAccessed": 1775803958613,
+      "type": "file"
+    },
+    {
+      "path": "src/stylesheets/tutorial-page.scss",
+      "accessCount": 5,
+      "lastAccessed": 1775807764345,
+      "type": "file"
+    },
+    {
+      "path": "webpack.common.js",
+      "accessCount": 4,
+      "lastAccessed": 1775803995182,
+      "type": "file"
+    },
+    {
+      "path": "src/tutorials/interface.html",
+      "accessCount": 4,
+      "lastAccessed": 1775807764175,
+      "type": "file"
+    },
+    {
+      "path": "src/tutorials/hotkeys.html",
+      "accessCount": 3,
+      "lastAccessed": 1775807392267,
+      "type": "file"
+    },
+    {
+      "path": "src/tutorials/blender.html",
+      "accessCount": 3,
+      "lastAccessed": 1775807393624,
+      "type": "file"
+    },
+    {
+      "path": "src/tutorials/simulation.html",
+      "accessCount": 3,
+      "lastAccessed": 1775807394566,
+      "type": "file"
+    },
+    {
+      "path": "src/tutorials/rigging.html",
+      "accessCount": 3,
+      "lastAccessed": 1775807395910,
+      "type": "file"
+    },
+    {
+      "path": "src/tutorials/rabbit.html",
+      "accessCount": 3,
+      "lastAccessed": 1775807396783,
+      "type": "file"
+    },
+    {
+      "path": "src/tutorials/polygons.html",
+      "accessCount": 3,
+      "lastAccessed": 1775807397704,
+      "type": "file"
+    },
+    {
+      "path": "src/tutorials/animation.html",
+      "accessCount": 3,
+      "lastAccessed": 1775807398784,
+      "type": "file"
+    },
+    {
+      "path": "src/journals/art.html",
+      "accessCount": 3,
+      "lastAccessed": 1775807763312,
+      "type": "file"
+    },
+    {
+      "path": "src/javascript/js.js",
+      "accessCount": 3,
+      "lastAccessed": 1775818294035,
+      "type": "file"
+    },
+    {
+      "path": "src/stylesheets/start.scss",
+      "accessCount": 3,
+      "lastAccessed": 1775818503775,
+      "type": "file"
+    },
+    {
+      "path": "src",
+      "accessCount": 2,
+      "lastAccessed": 1775802839628,
+      "type": "directory"
+    },
+    {
+      "path": "src/index.js",
+      "accessCount": 2,
+      "lastAccessed": 1775803088615,
+      "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 2,
+      "lastAccessed": 1775803095018,
+      "type": "directory"
+    },
+    {
+      "path": "src/index.css",
+      "accessCount": 2,
+      "lastAccessed": 1775803372088,
+      "type": "file"
+    },
+    {
+      "path": "src/models.html",
+      "accessCount": 2,
+      "lastAccessed": 1775805223199,
+      "type": "file"
+    },
+    {
+      "path": "src/stylesheets/art.scss",
+      "accessCount": 2,
+      "lastAccessed": 1775807763702,
+      "type": "file"
+    },
+    {
+      "path": "src/stylesheets/textures.scss",
+      "accessCount": 2,
+      "lastAccessed": 1775818476032,
+      "type": "file"
+    },
+    {
+      "path": "src/stylesheets/journal.scss",
+      "accessCount": 2,
+      "lastAccessed": 1775818481925,
+      "type": "file"
+    },
+    {
+      "path": "src/stylesheets/models.scss",
+      "accessCount": 2,
+      "lastAccessed": 1775818494654,
+      "type": "file"
+    },
+    {
+      "path": "package.json",
+      "accessCount": 1,
+      "lastAccessed": 1775800275405,
+      "type": "file"
+    },
+    {
+      "path": "webpack.dev.js",
+      "accessCount": 1,
+      "lastAccessed": 1775800278909,
+      "type": "file"
+    },
+    {
+      "path": "webpack.prod.js",
+      "accessCount": 1,
+      "lastAccessed": 1775800279247,
+      "type": "file"
+    },
+    {
+      "path": "src/page.jsx",
+      "accessCount": 1,
+      "lastAccessed": 1775800282048,
+      "type": "file"
+    },
+    {
+      "path": "src/index.html",
+      "accessCount": 1,
+      "lastAccessed": 1775800282266,
+      "type": "file"
+    },
+    {
+      "path": "src/javascript/ComponentExample.jsx",
+      "accessCount": 1,
+      "lastAccessed": 1775800284803,
+      "type": "file"
+    },
+    {
+      "path": "src/stylesheets/index.scss",
+      "accessCount": 1,
+      "lastAccessed": 1775800285111,
+      "type": "file"
+    },
+    {
+      "path": "src/stylesheets/vars.scss",
+      "accessCount": 1,
+      "lastAccessed": 1775800285328,
+      "type": "file"
+    },
+    {
+      "path": "src/stylesheets/basics.scss",
+      "accessCount": 1,
+      "lastAccessed": 1775800288912,
+      "type": "file"
+    },
+    {
+      "path": ".prettierrc",
+      "accessCount": 1,
+      "lastAccessed": 1775800289018,
+      "type": "file"
+    },
+    {
+      "path": "src/tutorials.html",
+      "accessCount": 1,
+      "lastAccessed": 1775802842135,
+      "type": "file"
+    },
+    {
+      "path": "src/stylesheets/tutorials.scss",
+      "accessCount": 1,
+      "lastAccessed": 1775802842396,
+      "type": "file"
+    },
+    {
+      "path": "src/history.html",
+      "accessCount": 1,
+      "lastAccessed": 1775802842533,
+      "type": "file"
+    },
+    {
+      "path": "src/journal.html",
+      "accessCount": 1,
+      "lastAccessed": 1775802842741,
+      "type": "file"
+    },
+    {
+      "path": "src/models/mercury.html",
+      "accessCount": 1,
+      "lastAccessed": 1775802849643,
+      "type": "file"
+    },
+    {
+      "path": "src/textures/foole.html",
+      "accessCount": 1,
+      "lastAccessed": 1775802849761,
+      "type": "file"
+    },
+    {
+      "path": "src/textures.html",
+      "accessCount": 1,
+      "lastAccessed": 1775802852370,
+      "type": "file"
+    },
+    {
+      "path": "src/stylesheets/page.scss",
+      "accessCount": 1,
+      "lastAccessed": 1775802859345,
+      "type": "file"
+    },
+    {
+      "path": "src/stylesheets/menu.scss",
+      "accessCount": 1,
+      "lastAccessed": 1775804831171,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

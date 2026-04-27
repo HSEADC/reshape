@@ -1,0 +1,327 @@
+body.tutorial-page {
+  font-family: 'AtypDisplay-Light';
+  background-color: #101010;
+  color: #f4f4f4;
+
+  .back {
+    position: relative;
+    overflow: hidden;
+    height: 60vh;
+    margin-bottom: 70px;
+
+    .back-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.5);
+      z-index: 0;
+    }
+
+    nav, .O_header, & > a {
+      position: relative;
+      z-index: 1;
+    }
+
+    .backarrow {
+      padding-top: 20px;
+      padding-left: 55px;
+    }
+  }
+
+  .header6 {
+    font-family: 'AtypDisplay-Semibold';
+    font-size: 64px;
+    line-height: 125%;
+    margin-left: 110px;
+    width: 65vw;
+  }
+
+  .duration {
+    font-family: 'AtypDisplay-LightItalic';
+    font-size: 20px;
+    color: #7a7a7a;
+    margin-top: 20px;
+    margin-left: 110px;
+  }
+
+  .text {
+    font-size: 28px;
+    line-height: 125%;
+    margin-left: 110px;
+    margin-top: 70px;
+    width: 70vw;
+  }
+
+  .line2 {
+    margin-top: 53px;
+    padding-left: 45px;
+    padding-right: 45px;
+    div {
+      background-color: #f4f4f4;
+      height: 1px;
+      width: 100%;
+    }
+  }
+
+  .image {
+    margin-top: 90px;
+    margin-left: 110px;
+    max-width: 80vw;
+  }
+
+  .ps {
+    font-family: 'AtypDisplay-LightItalic';
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 110px;
+  }
+
+  .steps {
+    margin-top: 70px;
+    margin-left: 110px;
+    width: 70vw;
+    counter-reset: step-counter;
+    .step {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 50px;
+      align-items: flex-start;
+      .step-number {
+        font-family: 'AtypDisplay-Semibold';
+        font-size: 64px;
+        color: #3c87b1;
+        min-width: 80px;
+        line-height: 1;
+      }
+      .step-content {
+        .step-title {
+          font-family: 'AtypDisplay-Semibold';
+          font-size: 32px;
+          margin-bottom: 15px;
+        }
+        .step-text {
+          font-size: 22px;
+          line-height: 140%;
+          color: #c4c4c4;
+        }
+      }
+    }
+  }
+
+  .tip {
+    margin-top: 70px;
+    margin-left: 110px;
+    padding: 40px;
+    border-left: 4px solid #3c87b1;
+    width: 65vw;
+    font-size: 22px;
+    line-height: 140%;
+    color: #c4c4c4;
+  }
+
+  .backj {
+    display: block;
+    font-size: 24px;
+    line-height: 95%;
+    color: #7a7a7a;
+    margin-top: 60px;
+    margin-left: 110px;
+    text-decoration: none;
+  }
+
+  footer {
+    .hselogo {
+      width: 50%;
+      margin-top: 30px;
+    }
+    padding-top: 115px;
+    background-color: #3c87b1;
+    width: 100%;
+    height: 385px;
+    margin-top: 110px;
+
+    .footer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1.5fr;
+      justify-content: space-between;
+      padding-left: 55px;
+      padding-right: 55px;
+      font-family: 'AtypDisplay-Light';
+      .header {
+        font-family: 'AtypDisplay-Regular';
+        font-size: 20px;
+        margin-bottom: 40px;
+      }
+      a {
+        text-decoration: none;
+        color: #f4f4f4;
+        font-size: 15px;
+      }
+      .linksFlex {
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+      }
+      .rass {
+        padding-left: 30px;
+      }
+      .form_group {
+        display: flex;
+        position: relative;
+        .form_label {
+          position: absolute;
+          top: 10px;
+          left: 0px;
+          z-index: 1;
+          transition: 0.3s;
+          color: #f4f4f4;
+        }
+        .form_input {
+          color: #f4f4f4;
+          font-size: 20px;
+          width: 22vw;
+          padding: 0 0 10px 0;
+          border: none;
+          border-bottom: 1px solid #f4f4f4;
+          background-color: transparent;
+          outline: none;
+          transition: 0.3s;
+        }
+        .ok {
+          font-family: 'AtypDisplay-Bold';
+          position: inherit;
+          left: -30px;
+          top: 10px;
+        }
+      }
+      .form_input:focus ~ .form_label,
+      .form_input:not(:placeholder-shown) ~ .form_label {
+        top: -18px;
+        font-size: 12px;
+        color: #e0e0e0;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1100px) {
+    .back {
+      .backarrow {
+        width: 255px;
+      }
+    }
+    nav {
+      display: block !important;
+    }
+    .O_header {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    footer {
+      height: 550px;
+      .footer {
+        grid-template-columns: 1fr 1fr 1fr;
+        .rass {
+          padding-left: 0;
+          margin-top: 30px;
+          grid-column-start: 1;
+          grid-column-end: 3;
+        }
+        .form_group {
+          .form_input {
+            width: 310px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 414px) {
+    .back .backarrow {
+      padding-left: 20px;
+      width: 220px;
+    }
+    .header6 {
+      font-size: 36px;
+      margin-left: 20px;
+      width: auto;
+      padding-right: 20px;
+    }
+    .duration {
+      margin-left: 20px;
+    }
+    .text {
+      padding-right: 20px;
+      margin-left: 20px;
+      font-size: 20px;
+      width: auto;
+    }
+    .image {
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-left: 0;
+      max-width: 100%;
+    }
+    .ps {
+      margin-left: 20px;
+      font-size: 14px;
+    }
+    .steps {
+      margin-left: 20px;
+      width: auto;
+      padding-right: 20px;
+      .step {
+        flex-direction: column;
+        gap: 10px;
+        .step-number {
+          font-size: 40px;
+        }
+        .step-content {
+          .step-title {
+            font-size: 22px;
+          }
+          .step-text {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+    .tip {
+      margin-left: 20px;
+      padding: 20px;
+      width: auto;
+      font-size: 18px;
+    }
+    .backj {
+      margin-left: 20px;
+    }
+    .nav-container .checkbox {
+      right: 35px;
+    }
+    .nav-container .hamburger-lines {
+      right: 35px;
+    }
+    .logo {
+      left: 20px;
+    }
+    footer {
+      height: 670px;
+      padding-top: 60px;
+      .footer {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+        .header {
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .navbar .menu-items {
+      padding-left: 20vw;
+    }
+  }
+}
