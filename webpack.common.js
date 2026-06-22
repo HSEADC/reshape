@@ -89,6 +89,12 @@ module.exports = {
       chunks: ['index']
     }),
 
+    // 404 page (served automatically by GitHub Pages for unmatched routes)
+    new HtmlWebpackPlugin({
+      template: './src/404.html',
+      filename: './404.html'
+    }),
+
     // // Internal pages
     // new HtmlWebpackPlugin({
     //   hash: true,
