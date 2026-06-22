@@ -20,6 +20,8 @@
 @import 'stylesheets/art.scss';
 @import 'stylesheets/music.scss';
 @import 'stylesheets/tutorial-page.scss';
+@import 'stylesheets/showcase.scss';
+@import 'stylesheets/enhance.scss';
 
 @import 'stylesheets/pixelcompare.css';
 @import 'stylesheets/pixelcompare.min.css';

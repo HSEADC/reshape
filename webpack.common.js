@@ -164,6 +164,50 @@ module.exports = {
       template: './src/models/mercury.html',
       filename: './models/mercury.html'
     }),
+    new HtmlWebpackPlugin({
+      template: './src/models/metaball.html',
+      filename: './models/metaball.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/models/cloud.html',
+      filename: './models/cloud.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/models/lotos.html',
+      filename: './models/lotos.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/models/gloves.html',
+      filename: './models/gloves.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/models/cube.html',
+      filename: './models/cube.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/models/animtex.html',
+      filename: './models/animtex.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/textures/asphalt.html',
+      filename: './textures/asphalt.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/textures/sweater.html',
+      filename: './textures/sweater.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/textures/paper.html',
+      filename: './textures/paper.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/textures/moh.html',
+      filename: './textures/moh.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/textures/palace.html',
+      filename: './textures/palace.html'
+    }),
 
     new HtmlWebpackPlugin({
       template: './src/tutorials/interface.html',

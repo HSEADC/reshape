@@ -1,9 +1,40 @@
 body.start {
   background-color: #101010;
-  #myBtnContainer {
+  .search-container {
     padding-left: 55px;
     padding-right: 55px;
     margin-top: 130px;
+  }
+  .search-input {
+    width: 100%;
+    max-width: 420px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #F4F4F4;
+    color: #F4F4F4;
+    font-family: 'AtypDisplay-Light';
+    font-size: 20px;
+    padding: 10px 0;
+    outline: none;
+    transition: border-color 0.3s ease;
+
+    &::placeholder {
+      color: #7A7A7A;
+    }
+
+    &:focus {
+      border-color: #3C87B1;
+    }
+  }
+  .search-highlight {
+    background-color: rgba(60, 135, 177, 0.35);
+    color: #F4F4F4;
+    border-radius: 2px;
+  }
+  #myBtnContainer {
+    padding-left: 55px;
+    padding-right: 55px;
+    margin-top: 40px;
   }
   .line2 {
     height: 1px;
@@ -36,7 +67,14 @@ body.start {
       .flex {
         padding-top: 20px;
         padding-bottom: 20px;
-        border: 1px solid #FFFFFF;
+        border: 1px solid rgba(244, 244, 244, 0.08);
+        border-radius: 5px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.035),
+          rgba(255, 255, 255, 0)
+        );
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -50,15 +88,21 @@ body.start {
         width: 74px;
       }
       .header {
-        height: 80px;
+        height: 84px;
         padding-left: 20px;
         line-height: 130%;
         padding-right: 20px;
         font-size: 32px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .text {
-        height: 70px;
+        height: 60px;
         font-family: 'AtypDisplay-Light';
         margin-top: 9px;
         font-size: 16px;
@@ -66,6 +110,12 @@ body.start {
         color: #7A7A7A;
         padding-right: 20px;
         padding-left: 20px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .time {
@@ -215,9 +265,7 @@ body.start {
       .journalCard {
         .header {
           font-size: 25px;
-        }
-        .text {
-          height: 85px;
+          height: 66px;
         }
       }
     }
@@ -235,9 +283,7 @@ body.start {
         .journalCard {
           .header {
             font-size: 25px;
-          }
-          .text {
-            height: 85px;
+            height: 66px;
           }
         }
       }
@@ -261,10 +307,19 @@ body.start {
       }
   
       @media screen and (max-width: 414px) {
+        .search-container {
+          padding-left: 20px;
+          padding-right: 20px;
+          margin-top: 70px;
+        }
+        .search-input {
+          max-width: none;
+          font-size: 16px;
+        }
         #myBtnContainer {
           padding-left: 20px;
           padding-right: 20px;
-          margin-top: 130px;
+          margin-top: 30px;
         }
         .btn {
           padding: 6px 10px;
@@ -285,14 +340,14 @@ body.start {
             }
             .header {
               font-size: 16px;
-              height: auto;
+              height: 42px;
               padding-left: 10px;
               padding-right: 10px;
               padding-bottom: 8px;
             }
             .text {
               font-size: 12px;
-              height: auto;
+              height: 45px;
               padding-left: 10px;
               padding-right: 10px;
               padding-bottom: 8px;

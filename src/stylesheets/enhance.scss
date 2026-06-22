@@ -1,0 +1,282 @@
+// ─────────────────────────────────────────────────────────────
+// enhance.scss — 3D depth + motion layer
+// Additive enhancement for tutorial & journal detail pages.
+// Reuses the existing palette (#101010 / #f4f4f4 / #3c87b1) and
+// AtypDisplay type. No HTML changes: JS tags existing markup, and
+// pages still read fine with JS disabled.
+// ─────────────────────────────────────────────────────────────
+
+// ---- scroll reveal (only active once JS marks body.js-enhanced) ----
+body.js-enhanced {
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease,
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+// ---- reading progress bar (injected by JS) ----
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, #3c87b1, #6fb6da);
+  box-shadow: 0 0 12px rgba(60, 135, 177, 0.6);
+  z-index: 1000;
+  pointer-events: none;
+}
+
+// slow drift of the viewport grid so the hero feels alive
+@keyframes grid-flow {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 0 48px, 48px 0;
+  }
+}
+
+// ---- shared hero treatment: perspective viewport grid + scrim ----
+@mixin hero-3d {
+  position: relative;
+
+  // grounding scrim — fades the hero image into the dark page
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      to bottom,
+      transparent 35%,
+      rgba(16, 16, 16, 0.85) 100%
+    );
+  }
+
+  // receding 3D grid floor (Cinema 4D / Blender viewport vibe)
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 65%;
+    transform: perspective(420px) rotateX(62deg);
+    transform-origin: bottom center;
+    background-image: linear-gradient(
+        rgba(60, 135, 177, 0.35) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(60, 135, 177, 0.35) 1px, transparent 1px);
+    background-size: 48px 48px;
+    z-index: 0;
+    pointer-events: none;
+    mask-image: linear-gradient(to top, #000 0%, transparent 78%);
+    -webkit-mask-image: linear-gradient(to top, #000 0%, transparent 78%);
+    animation: grid-flow 16s linear infinite;
+  }
+
+  // keep navigation and the back arrow above the overlays
+  nav,
+  .O_header,
+  & > a {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+body.tutorial-page .back {
+  @include hero-3d;
+  .back-img {
+    z-index: 0;
+  }
+}
+
+body.art .back,
+body.music .back {
+  @include hero-3d;
+}
+
+body.showcase .back {
+  @include hero-3d;
+  .back-img {
+    z-index: 0;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// Tutorial pages
+// ─────────────────────────────────────────────────────────────
+body.tutorial-page {
+  // refined display heading
+  .header6 {
+    letter-spacing: -0.02em;
+  }
+
+  // meta line as an understated label row
+  .duration {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-family: 'AtypDisplay-Medium';
+    font-size: 15px;
+  }
+
+  // hero image gets real depth
+  .image {
+    border-radius: 4px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  // gradient divider instead of a flat 1px line
+  .line2 div {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(244, 244, 244, 0.55) 18%,
+      rgba(244, 244, 244, 0.55) 82%,
+      transparent
+    );
+  }
+
+  // steps become elevated cards (static — no tilt, no glow)
+  .steps .step {
+    padding: 30px 34px;
+    border: 1px solid rgba(244, 244, 244, 0.08);
+    border-radius: 5px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0)
+    );
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    transition: border-color 0.3s ease;
+
+    &:hover {
+      border-color: rgba(60, 135, 177, 0.4);
+    }
+  }
+
+  // tip block: soft blue wash + depth
+  .tip {
+    background: linear-gradient(
+      135deg,
+      rgba(60, 135, 177, 0.12),
+      rgba(60, 135, 177, 0.02)
+    );
+    border-radius: 0 5px 5px 0;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+  }
+
+  .backj {
+    transition: color 0.3s ease, transform 0.3s ease;
+    &:hover {
+      color: #f4f4f4;
+      transform: translateX(6px);
+    }
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// Journal pages (art / music) — same depth + motion system
+// ─────────────────────────────────────────────────────────────
+body.art,
+body.music {
+  .header6 {
+    letter-spacing: -0.02em;
+  }
+
+  .line2 div {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(244, 244, 244, 0.55) 18%,
+      rgba(244, 244, 244, 0.55) 82%,
+      transparent
+    );
+  }
+
+  .backj {
+    transition: color 0.3s ease, transform 0.3s ease;
+    &:hover {
+      color: #f4f4f4;
+      transform: translateX(6px);
+    }
+  }
+}
+
+// large hero figures: static depth only (no hover-scale on big images)
+body.art .image {
+  border-radius: 4px;
+  box-shadow: 0 20px 52px rgba(0, 0, 0, 0.46);
+}
+
+// gallery thumbnails lift on hover with real depth shadow.
+// their containers (.lolik*) already clip overflow, so the scale is safe.
+body.art .lolik img,
+body.art .lolik1 img,
+body.art .lolik2 img,
+body.music .cards .card img {
+  border-radius: 4px;
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.42);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s ease;
+}
+body.art .lolik img:hover,
+body.art .lolik1 img:hover,
+body.art .lolik2 img:hover,
+body.music .cards .card img:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 30px 66px rgba(0, 0, 0, 0.55);
+}
+
+// pre-existing tablet-range overflow: the journal hero figure has a
+// 110px left margin but no width cap between the 414 and 1100 breakpoints.
+// Scope the fix to exactly that gap so desktop and mobile stay untouched.
+@media screen and (min-width: 415px) and (max-width: 1100px) {
+  body.art .image,
+  body.music .image {
+    max-width: calc(100% - 130px);
+    height: auto;
+  }
+}
+
+// music cards as a unit
+body.music .cards .card {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+// ---- reduced-motion: disable all the movement ----
+@media (prefers-reduced-motion: reduce) {
+  body.js-enhanced .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  body.tutorial-page .steps .step,
+  body.art .image img,
+  body.art .lolik img,
+  body.art .lolik1 img,
+  body.art .lolik2 img,
+  body.music .cards .card,
+  body.music .cards .card img {
+    transition: none !important;
+  }
+  body.tutorial-page .back::after,
+  body.art .back::after,
+  body.music .back::after,
+  body.showcase .back::after {
+    animation: none !important;
+  }
+}

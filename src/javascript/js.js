@@ -81,3 +81,70 @@ if (burgerMenu) {
   });
 }
 
+const tutorialSearchInput = document.getElementById('tutorialSearchInput');
+
+if (tutorialSearchInput) {
+  const tutorialCards = Array.prototype.map.call(
+    document.getElementsByClassName('journalCard'),
+    function(card) {
+      return {
+        card: card,
+        headerEl: card.querySelector('.header'),
+        textEl: card.querySelector('.text'),
+        header: card.querySelector('.header').textContent.trim(),
+        text: card.querySelector('.text').textContent.trim()
+      };
+    }
+  );
+
+  function escapeRegex(value) {
+    return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function highlightMatch(original, query) {
+    if (!query) return original;
+    const regex = new RegExp(escapeRegex(query), 'gi');
+    return original.replace(regex, function(match) {
+      return '<span class="search-highlight">' + match + '</span>';
+    });
+  }
+
+  function getActiveCategory() {
+    const activeBtn = document.querySelector('#myBtnContainer .btn.active');
+    if (!activeBtn) return '';
+    const onclickAttr = activeBtn.getAttribute('onclick') || '';
+    const match = onclickAttr.match(/filterSelection\('([^']*)'\)/);
+    const category = match ? match[1] : '';
+    return category === 'all' ? '' : category;
+  }
+
+  function applyTutorialSearch() {
+    const query = tutorialSearchInput.value.trim().toLowerCase();
+    const category = getActiveCategory();
+
+    tutorialCards.forEach(function(item) {
+      const matchesQuery =
+        !query ||
+        item.header.toLowerCase().indexOf(query) > -1 ||
+        item.text.toLowerCase().indexOf(query) > -1;
+      const matchesCategory =
+        !category || item.card.className.indexOf(category) > -1;
+
+      if (matchesQuery && matchesCategory) {
+        w3AddClass(item.card, 'show');
+      } else {
+        w3RemoveClass(item.card, 'show');
+      }
+
+      item.headerEl.innerHTML = highlightMatch(item.header, query);
+      item.textEl.innerHTML = highlightMatch(item.text, query);
+    });
+  }
+
+  tutorialSearchInput.addEventListener('input', applyTutorialSearch);
+
+  Array.prototype.forEach.call(btns, function(btn) {
+    btn.addEventListener('click', applyTutorialSearch);
+  });
+}
+
