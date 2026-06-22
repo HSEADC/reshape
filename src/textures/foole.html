@@ -4,30 +4,30 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <title></title>
-    <!-- <link type="image/x-icon" href="./images/favicon.ico" rel="shortcut icon">
-  <link type="image/x-icon" href="./images/favicon.ico" rel="icon"> -->
+    <title>Фольга</title>
+    <link type="image/x-icon" href="../images/favicon.ico" rel="shortcut icon">
+    <link type="image/x-icon" href="../images/favicon.ico" rel="icon">
+    <analytics></analytics>
   </head>
-  <body class="fole">
+  <body class="showcase">
     <div class="back">
+      <img class="back-img" src="../images/fole.svg" alt="">
       <nav>
         <div class="navbar">
           <div class="kuku nav-container">
-              <input class="checkbox" type="checkbox" name="" id="ttt">
-              <div class="hamburger-lines">
-                <span class="opa raz"></span>
-                <span class="opa dva"></span>
-                <span class="opa tri"></span>
-              </div>  
-              <a href="../index.html"> 
-                <div class="logo">
-                    <img src="../images/logo.svg">
-                  </div>
-              </a>
-            <div class="menu-items">
-              <div class="borderline">
-  
+            <input class="checkbox" type="checkbox" name="" id="ttt">
+            <div class="hamburger-lines">
+              <span class="opa raz"></span>
+              <span class="opa dva"></span>
+              <span class="opa tri"></span>
+            </div>
+            <a href="../index.html">
+              <div class="logo">
+                <img src="../images/logo.svg">
               </div>
+            </a>
+            <div class="menu-items">
+              <div class="borderline"></div>
               <div>
                 <li><a href="../history.html">история</a></li>
                 <li><a href="../journal.html">журнал</a></li>
@@ -60,40 +60,33 @@
         <img class="backarrow" src="../images/backarrow.svg">
       </a>
     </div>
-    <div class="toto">
-        <div>
-            <div class="header">
-                Фольга
-            </div>
-            <div class="text">
-               Реалистичная модель фольги
-            </div>
-        
-            <div class="chara">
-                <div class="header1">
-                    Характеристики
-                </div>
-                <div class="info">
-                    <div class="left">
-                        <a>c4d</a>
-                        <a>4096 px</a>
-                    </div>
-                    <div class="left">
-      
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="photo">
-            <img src="../images/foole.svg">
-            <div class="download">
-                скачать
-            </div>
-        </div>
+
+    <div class="header6">Фольга</div>
+    <div class="meta">текстура · 4096 px · png</div>
+
+    <div class="text">
+      Реалистичная текстура помятой фольги с резкими бликами и тонкими складками.
     </div>
-   
 
+    <div class="line2"><div></div></div>
 
+    <div class="specs">
+      <div class="specs-title">Характеристики</div>
+      <div class="specs-list">
+        <div class="spec-row"><span class="k">разрешение</span><span class="v">4096 px</span></div>
+        <div class="spec-row"><span class="k">формат</span><span class="v">png</span></div>
+        <div class="spec-row"><span class="k">бесшовная</span><span class="v">да</span></div>
+        <div class="spec-row"><span class="k">карты</span><span class="v">diffuse · normal</span></div>
+        <div class="spec-row"><span class="k">тип</span><span class="v">металл</span></div>
+        <div class="spec-row"><span class="k">софт</span><span class="v">cinema 4d</span></div>
+      </div>
+    </div>
+
+    <a class="download" href="">скачать</a>
+
+    <div class="line2"><div></div></div>
+
+    <a class="backj" href="../textures.html">вернуться к текстурам</a>
 
     <footer>
       <div class="footer">
@@ -123,23 +116,21 @@
               <input class="form_input" placeholder=" ">
               <label class="form_label">электронная почта</label>
             </div>
-            <div class="ok">
-              OK
-            </div>
+            <div class="ok">OK</div>
           </div>
         </div>
       </div>
     </footer>
+
     <script>
       $("#ttt").click(function() {
-      const bodyOverflow = $("body").css("overflow");
- 
-      if (bodyOverflow === "hidden") {
-         $("body").css("overflow", "visible");
-      } else {
-         $("body").css("overflow", "hidden");
-      }
-     });
-     </script>
+        const bodyOverflow = $("body").css("overflow");
+        if (bodyOverflow === "hidden") {
+          $("body").css("overflow", "visible");
+        } else {
+          $("body").css("overflow", "hidden");
+        }
+      });
+    </script>
   </body>
 </html>

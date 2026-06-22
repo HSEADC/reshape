@@ -4,30 +4,30 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <title></title>
-    <!-- <link type="image/x-icon" href="./images/favicon.ico" rel="shortcut icon">
-  <link type="image/x-icon" href="./images/favicon.ico" rel="icon"> -->
+    <title>Ртутный комок</title>
+    <link type="image/x-icon" href="../images/favicon.ico" rel="shortcut icon">
+    <link type="image/x-icon" href="../images/favicon.ico" rel="icon">
+    <analytics></analytics>
   </head>
-  <body class="fole">
+  <body class="showcase">
     <div class="back">
+      <img class="back-img" src="../images/rtut.svg" alt="">
       <nav>
         <div class="navbar">
           <div class="kuku nav-container">
-              <input class="checkbox" type="checkbox" name="" id="ttt">
-              <div class="hamburger-lines">
-                <span class="opa raz"></span>
-                <span class="opa dva"></span>
-                <span class="opa tri"></span>
-              </div>  
-              <a href="../index.html"> 
-                <div class="logo">
-                    <img src="../images/logo.svg">
-                  </div>
-              </a>
-            <div class="menu-items">
-              <div class="borderline">
-  
+            <input class="checkbox" type="checkbox" name="" id="ttt">
+            <div class="hamburger-lines">
+              <span class="opa raz"></span>
+              <span class="opa dva"></span>
+              <span class="opa tri"></span>
+            </div>
+            <a href="../index.html">
+              <div class="logo">
+                <img src="../images/logo.svg">
               </div>
+            </a>
+            <div class="menu-items">
+              <div class="borderline"></div>
               <div>
                 <li><a href="../history.html">история</a></li>
                 <li><a href="../journal.html">журнал</a></li>
@@ -60,51 +60,33 @@
         <img class="backarrow" src="../images/backarrow.svg">
       </a>
     </div>
-    <div class="toto">
-        <div>
-            <div class="header">
-                Ртутный комок
-            </div>
-            <div class="text">
-                Модель ртутного комка с анимацией, размер 1024х1024, png, 300 полигонов
-            </div>
-        
-            <div class="chara">
-                <div class="header1">
-                    Характеристики
-                </div>
-                <div class="info">
-                    <div class="left">
-                        <a>геометрия</a>
-                        <a>полигоны</a>
-                        <a>вершины</a>
-                        <a>текстуры</a>
-                        <a>подстроенный</a>
-                        <a>мультипликационный</a>
-                        <a>готов к печати в 3D</a>
-                    </div>
-                    <div class="left">
-                        <a>polygonal</a>
-                        <a>1,661</a>
-                        <a>1,748</a>
-                        <a>+</a>
-                        <a>-</a>
-                        <a>-</a>
-                        <a>-</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="photo">
-            <img src="../images/mercury.svg">
-            <div class="download">
-                скачать
-            </div>
-        </div>
+
+    <div class="header6">Ртутный комок</div>
+    <div class="meta">модель · cinema 4d · 1 661 полигон</div>
+
+    <div class="text">
+      Абстрактная форма с текстурой жидкого металла и плавной анимацией перетекания капли.
     </div>
-   
 
+    <div class="line2"><div></div></div>
 
+    <div class="specs">
+      <div class="specs-title">Характеристики</div>
+      <div class="specs-list">
+        <div class="spec-row"><span class="k">геометрия</span><span class="v">polygonal</span></div>
+        <div class="spec-row"><span class="k">полигоны</span><span class="v">1 661</span></div>
+        <div class="spec-row"><span class="k">вершины</span><span class="v">1 748</span></div>
+        <div class="spec-row"><span class="k">анимация</span><span class="v">есть</span></div>
+        <div class="spec-row"><span class="k">текстуры</span><span class="v">металл</span></div>
+        <div class="spec-row"><span class="k">формат</span><span class="v">c4d · obj</span></div>
+      </div>
+    </div>
+
+    <a class="download" href="">скачать</a>
+
+    <div class="line2"><div></div></div>
+
+    <a class="backj" href="../models.html">вернуться к моделям</a>
 
     <footer>
       <div class="footer">
@@ -134,23 +116,21 @@
               <input class="form_input" placeholder=" ">
               <label class="form_label">электронная почта</label>
             </div>
-            <div class="ok">
-              OK
-            </div>
+            <div class="ok">OK</div>
           </div>
         </div>
       </div>
     </footer>
+
     <script>
       $("#ttt").click(function() {
-      const bodyOverflow = $("body").css("overflow");
- 
-      if (bodyOverflow === "hidden") {
-         $("body").css("overflow", "visible");
-      } else {
-         $("body").css("overflow", "hidden");
-      }
-     });
-     </script>
+        const bodyOverflow = $("body").css("overflow");
+        if (bodyOverflow === "hidden") {
+          $("body").css("overflow", "visible");
+        } else {
+          $("body").css("overflow", "hidden");
+        }
+      });
+    </script>
   </body>
 </html>
