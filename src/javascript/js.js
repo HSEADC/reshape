@@ -112,9 +112,7 @@ if (tutorialSearchInput) {
   function getActiveCategory() {
     const activeBtn = document.querySelector('#myBtnContainer .btn.active');
     if (!activeBtn) return '';
-    const onclickAttr = activeBtn.getAttribute('onclick') || '';
-    const match = onclickAttr.match(/filterSelection\('([^']*)'\)/);
-    const category = match ? match[1] : '';
+    const category = activeBtn.dataset.filter || '';
     return category === 'all' ? '' : category;
   }
 
