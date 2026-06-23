@@ -12,6 +12,12 @@ body {
   font-weight: 400;
 }
 
+body.nav-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
 .images {
   display: flex;
 
