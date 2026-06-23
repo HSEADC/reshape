@@ -28,8 +28,7 @@ body.js-enhanced {
   left: 0;
   height: 3px;
   width: 0;
-  background: linear-gradient(90deg, #3c87b1, #6fb6da);
-  box-shadow: 0 0 12px rgba(60, 135, 177, 0.6);
+  background-color: #3c87b1;
   z-index: 1000;
   pointer-events: none;
 }
@@ -48,18 +47,14 @@ body.js-enhanced {
 @mixin hero-3d {
   position: relative;
 
-  // grounding scrim — fades the hero image into the dark page
+  // grounding scrim — flat dark tint, same technique as art/music hero overlays
   &::before {
     content: '';
     position: absolute;
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    background: linear-gradient(
-      to bottom,
-      transparent 35%,
-      rgba(16, 16, 16, 0.85) 100%
-    );
+    background-color: rgba(16, 16, 16, 0.5);
   }
 
   // receding 3D grid floor (Cinema 4D / Blender viewport vibe)
@@ -130,50 +125,15 @@ body.tutorial-page {
     font-size: 15px;
   }
 
-  // hero image gets real depth
-  .image {
-    border-radius: 4px;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
-  }
-
-  // gradient divider instead of a flat 1px line
-  .line2 div {
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(244, 244, 244, 0.55) 18%,
-      rgba(244, 244, 244, 0.55) 82%,
-      transparent
-    );
-  }
-
-  // steps become elevated cards (static — no tilt, no glow)
+  // steps get a plain flat border, no card chrome
   .steps .step {
-    padding: 30px 34px;
-    border: 1px solid rgba(244, 244, 244, 0.08);
-    border-radius: 5px;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.035),
-      rgba(255, 255, 255, 0)
-    );
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    padding: 20px 24px;
+    border: 1px solid rgba(244, 244, 244, 0.15);
     transition: border-color 0.3s ease;
 
     &:hover {
-      border-color: rgba(60, 135, 177, 0.4);
+      border-color: #3c87b1;
     }
-  }
-
-  // tip block: soft blue wash + depth
-  .tip {
-    background: linear-gradient(
-      135deg,
-      rgba(60, 135, 177, 0.12),
-      rgba(60, 135, 177, 0.02)
-    );
-    border-radius: 0 5px 5px 0;
-    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
   }
 
   .backj {
@@ -194,16 +154,6 @@ body.music {
     letter-spacing: -0.02em;
   }
 
-  .line2 div {
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(244, 244, 244, 0.55) 18%,
-      rgba(244, 244, 244, 0.55) 82%,
-      transparent
-    );
-  }
-
   .backj {
     transition: color 0.3s ease, transform 0.3s ease;
     &:hover {
@@ -213,29 +163,19 @@ body.music {
   }
 }
 
-// large hero figures: static depth only (no hover-scale on big images)
-body.art .image {
-  border-radius: 4px;
-  box-shadow: 0 20px 52px rgba(0, 0, 0, 0.46);
-}
-
-// gallery thumbnails lift on hover with real depth shadow.
+// gallery thumbnails lift slightly on hover.
 // their containers (.lolik*) already clip overflow, so the scale is safe.
 body.art .lolik img,
 body.art .lolik1 img,
 body.art .lolik2 img,
 body.music .cards .card img {
-  border-radius: 4px;
-  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.42);
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.5s ease;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 body.art .lolik img:hover,
 body.art .lolik1 img:hover,
 body.art .lolik2 img:hover,
 body.music .cards .card img:hover {
   transform: translateY(-6px) scale(1.015);
-  box-shadow: 0 30px 66px rgba(0, 0, 0, 0.55);
 }
 
 // pre-existing tablet-range overflow: the journal hero figure has a
@@ -265,7 +205,6 @@ body.music .cards .card {
     transition: none !important;
   }
   body.tutorial-page .steps .step,
-  body.art .image img,
   body.art .lolik img,
   body.art .lolik1 img,
   body.art .lolik2 img,

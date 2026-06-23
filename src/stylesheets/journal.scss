@@ -73,16 +73,12 @@ body.journal {
     .soon-badge {
       display: inline-block;
       margin-top: 9px;
-      padding: 3px 10px;
-      border: 1px solid #3C87B1;
-      border-radius: 20px;
       font-family: 'AtypDisplay-Medium';
-      font-size: 11px;
+      font-size: 12px;
       line-height: 120%;
       text-transform: uppercase;
       letter-spacing: 0.06em;
       color: #3C87B1;
-      width: fit-content;
     }
 
   }
@@ -149,15 +145,11 @@ body.journal {
 
         &.soon-badge {
           display: inline-block;
-          padding: 3px 10px;
-          border: 1px solid #3C87B1;
-          border-radius: 20px;
           font-family: 'AtypDisplay-Medium';
-          font-size: 11px;
+          font-size: 12px;
           text-transform: uppercase;
           letter-spacing: 0.06em;
           color: #3C87B1;
-          width: fit-content;
         }
       }
 
