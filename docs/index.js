@@ -10,7 +10,49 @@
 // tutorial and journal layouts. No markup assumptions beyond the
 // existing classes; everything degrades gracefully without JS.
 // ─────────────────────────────────────────────────────────────
+// ---- burger menu scroll lock (runs on every page, all body classes) ----
 ;
+
+(function () {
+  var menuCheckbox = document.getElementById('ttt');
+  if (!menuCheckbox) return;
+  var savedScrollY = 0;
+  menuCheckbox.addEventListener('change', function () {
+    if (menuCheckbox.checked) {
+      savedScrollY = window.pageYOffset;
+      document.body.classList.add('nav-open');
+    } else {
+      document.body.classList.remove('nav-open');
+      window.scrollTo(0, savedScrollY);
+    }
+  });
+})() // ---- reading progress bar for the history article page ----
+;
+
+(function () {
+  var body = document.body;
+  if (!body || !body.classList.contains('history')) return;
+  var bar = document.createElement('div');
+  bar.className = 'reading-progress';
+  body.appendChild(bar);
+  var ticking = false;
+
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function () {
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+      var docH = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = docH > 0 ? st / docH * 100 + '%' : '0%';
+      ticking = false;
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, {
+    passive: true
+  });
+  onScroll();
+})();
 
 (function () {
   var body = document.body;
