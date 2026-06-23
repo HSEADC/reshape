@@ -75,13 +75,7 @@ body.showcase {
     div {
       height: 1px;
       width: 100%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(244, 244, 244, 0.55) 18%,
-        rgba(244, 244, 244, 0.55) 82%,
-        transparent
-      );
+      background-color: #f4f4f4;
     }
   }
 
@@ -130,7 +124,6 @@ body.showcase {
     width: 220px;
     height: 60px;
     border: 2px solid #f4f4f4;
-    border-radius: 4px;
     font-size: 24px;
     text-decoration: none;
     color: #f4f4f4;
